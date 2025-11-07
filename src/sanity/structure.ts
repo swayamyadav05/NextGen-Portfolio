@@ -8,6 +8,7 @@ import {
   DocumentIcon,
   DocumentsIcon,
   InlineIcon,
+  LinkIcon,
   ProjectsIcon,
   RocketIcon,
   StarIcon,
@@ -26,9 +27,7 @@ export const structure: StructureResolver = (S) =>
         .title("Profile")
         .icon(UserIcon)
         .child(
-          S.document()
-            .schemaType("profile")
-            .documentId("singleton-profile")
+          S.document().schemaType("profile").documentId("singleton-profile"),
         ),
 
       S.divider(),
@@ -45,9 +44,7 @@ export const structure: StructureResolver = (S) =>
                 .title("Projects")
                 .icon(ProjectsIcon)
                 .schemaType("project")
-                .child(
-                  S.documentTypeList("project").title("Projects")
-                ),
+                .child(S.documentTypeList("project").title("Projects")),
 
               S.listItem()
                 .title("Skills")
@@ -59,10 +56,8 @@ export const structure: StructureResolver = (S) =>
                 .title("Services")
                 .icon(TagIcon)
                 .schemaType("service")
-                .child(
-                  S.documentTypeList("service").title("Services")
-                ),
-            ])
+                .child(S.documentTypeList("service").title("Services")),
+            ]),
         ),
 
       S.divider(),
@@ -80,27 +75,21 @@ export const structure: StructureResolver = (S) =>
                 .icon(CaseIcon)
                 .schemaType("experience")
                 .child(
-                  S.documentTypeList("experience").title(
-                    "Work Experience"
-                  )
+                  S.documentTypeList("experience").title("Work Experience"),
                 ),
 
               S.listItem()
                 .title("Education")
                 .icon(BookIcon)
                 .schemaType("education")
-                .child(
-                  S.documentTypeList("education").title("Education")
-                ),
+                .child(S.documentTypeList("education").title("Education")),
 
               S.listItem()
                 .title("Certifications")
                 .icon(DocumentIcon)
                 .schemaType("certification")
                 .child(
-                  S.documentTypeList("certification").title(
-                    "Certifications"
-                  )
+                  S.documentTypeList("certification").title("Certifications"),
                 ),
 
               S.listItem()
@@ -109,10 +98,10 @@ export const structure: StructureResolver = (S) =>
                 .schemaType("achievement")
                 .child(
                   S.documentTypeList("achievement").title(
-                    "Achievements & Awards"
-                  )
+                    "Achievements & Awards",
+                  ),
                 ),
-            ])
+            ]),
         ),
 
       S.divider(),
@@ -120,7 +109,7 @@ export const structure: StructureResolver = (S) =>
       // Content & Community
       S.listItem()
         .title("Content & Community")
-        .icon(DocumentIcon)
+        .icon(DocumentsIcon)
         .child(
           S.list()
             .title("Content & Community")
@@ -129,20 +118,14 @@ export const structure: StructureResolver = (S) =>
                 .title("Blog Posts")
                 .icon(ComposeIcon)
                 .schemaType("blog")
-                .child(
-                  S.documentTypeList("blog").title("Blog Posts")
-                ),
+                .child(S.documentTypeList("blog").title("Blog Posts")),
 
               S.listItem()
                 .title("Testimonials")
                 .icon(CommentIcon)
                 .schemaType("testimonial")
-                .child(
-                  S.documentTypeList("testimonial").title(
-                    "Testimonials"
-                  )
-                ),
-            ])
+                .child(S.documentTypeList("testimonial").title("Testimonials")),
+            ]),
         ),
 
       S.divider(),
@@ -161,7 +144,7 @@ export const structure: StructureResolver = (S) =>
                 .child(
                   S.documentTypeList("contact")
                     .title("New Submissions")
-                    .filter('_type == "contact" && status == "new"')
+                    .filter('_type == "contact" && status == "new"'),
                 ),
 
               S.listItem()
@@ -170,11 +153,9 @@ export const structure: StructureResolver = (S) =>
                 .child(
                   S.documentTypeList("contact")
                     .title("Archived Submissions")
-                    .filter(
-                      '_type == "contact" && status == "archived"'
-                    )
+                    .filter('_type == "contact" && status == "archived"'),
                 ),
-            ])
+            ]),
         ),
 
       S.divider(),
@@ -182,11 +163,9 @@ export const structure: StructureResolver = (S) =>
       // Navigation
       S.listItem()
         .title("Navigation Links")
-        .icon(DocumentIcon)
+        .icon(LinkIcon)
         .schemaType("navigation")
-        .child(
-          S.documentTypeList("navigation").title("Navigation Links")
-        ),
+        .child(S.documentTypeList("navigation").title("Navigation Links")),
 
       S.divider(),
 
@@ -197,6 +176,6 @@ export const structure: StructureResolver = (S) =>
         .child(
           S.document()
             .schemaType("siteSettings")
-            .documentId("singleton-siteSettings")
+            .documentId("singleton-siteSettings"),
         ),
     ]);
