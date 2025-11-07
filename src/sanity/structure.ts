@@ -69,7 +69,7 @@ export const structure: StructureResolver = (S) =>
 
       // Professional Background
       S.listItem()
-        .title("Profesional Background")
+        .title("Professional Background")
         .icon(CaseIcon)
         .child(
           S.list()
@@ -169,7 +169,7 @@ export const structure: StructureResolver = (S) =>
                 .icon(InlineIcon)
                 .child(
                   S.documentTypeList("contact")
-                    .title("Archived Submissons")
+                    .title("Archived Submissions")
                     .filter(
                       '_type == "contact" && status == "archived"'
                     )
