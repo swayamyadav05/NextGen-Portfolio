@@ -3,9 +3,7 @@ import { HeroSection } from "./sections/HeroSection";
 const PortfolioContent = async () => {
   return (
     <>
-      {/* <HeroSection /> */}
       <HeroSection />
-
       {/* <AboutSection /> */}
       {/* <TestimonialsSection /> */}
       {/* <SkillsSection /> */}
